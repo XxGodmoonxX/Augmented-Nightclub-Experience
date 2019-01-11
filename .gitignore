@@ -45,3 +45,6 @@ sysinfo.txt
 # JSON local storage of simulator maps
 jsonMaps.json
 jsonMaps.json.meta
+
+# XCode
+/XCode/

@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Placenote
+using Placenote;
 
-public class GameControllerTutorial : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	
-	// Update is called once per frame
-	void Update () {
-		
+	protected override void OnGameStart() {
+		PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
+		PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 	}
+
 }

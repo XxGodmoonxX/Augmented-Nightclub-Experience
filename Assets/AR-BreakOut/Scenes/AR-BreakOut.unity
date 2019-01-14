@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2be1c5634b84e8080b2a2491eca344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceImage: {fileID: 11400000, guid: 9d6cedfb4c48647ca9007fb8cb8aa6b0, type: 2}
-  prefabToGenerate: {fileID: 1283292900242102, guid: 8855f6e449b9d4d3fae7f0a1a5ff9c2f,
+  referenceImage: {fileID: 11400000, guid: b62aec2312aea41dba577c3fc28c9d4f, type: 2}
+  prefabToGenerate: {fileID: 1687879659016932, guid: feb21b3b19b064b7881e16115b66cde8,
     type: 2}
 --- !u!4 &20795502
 Transform:

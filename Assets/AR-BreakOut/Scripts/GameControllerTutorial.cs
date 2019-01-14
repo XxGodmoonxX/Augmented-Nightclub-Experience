@@ -3,45 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 //Placenote
 using Placenote;
+using UnityEngine.XR.iOS;
 
+using UnityEngine.UI; //Text使うため
+
+
+// namespace UnityEngine.XR.iOS
+// {
 public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 
 	float x = 0;
 	float y = 0;
 	float z = 0;
+	// Vector3 position = (x, y, z);
 
 	public Camera cam;
 
-	
-	protected override void OnGameStart() {
+	public Transform m_HitTransform;
+	public float maxRayDistance = 30.0f;
+	public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
-		// PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
-		PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
+	public GameObject debugCanvas; //Text
+
+  // protected virtual void OnRoomListUpdate () { 
+	// 	Text debug_text = debugCanvas.GetComponent<Text>();
+	// 	debug_text.text = "OnRoomListUpdate";
+	// }
+
+
+	protected override void OnJoinedRoom() {
+		Debug.Log("JoinTheRoom!!!");
+	}
+
+	protected override void OnGameStart() {
+		Debug.Log("GameStart");
+
+		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
+		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("Sphere", Vector3.forward, Quaternion.identity, 0);
 		
-		if (Input.touchCount > 0 && cam != null) {
-    	//CreatePrimitiveで動的にGameObjectであるCubeを生成する
-      GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-			//Cubeに適用するランダムな色を生成する
-      Material material = new Material(Shader.Find("Diffuse")) {
-        // color = new Color(Random.value, Random.value, Random.value)
-				color = new Color(0, 0, 200)
-      };
-      //ランダムに変化する色をCubeに適用する
-      cube.GetComponent<Renderer>().material = material;
-      //端末をタップして、ランダムな色のCubeを認識した平面上に投げ出すように追加していく
-      //Cubeの大きさも0.2fとして指定している
-      cube.transform.position = cam.transform.TransformPoint(0, 0, 0.5f);
-			// cube.transform.position = cam.transform.TransformPoint(0.5f, 0, 0);
-			float sphereSize = 1.0f;
-      cube.transform.localScale = new Vector3(sphereSize, sphereSize, sphereSize);
-      //CubeにはRigidbodyを持たせて重力を与えておかないと、床の上には配置されないので注意が必要。Rigidbodyで重力を持たせないとCubeは宙に浮いた状態になる
-      cube.AddComponent<Rigidbody>();
-			//これでタップしたときに斜め上にキューブ飛んでいく？そして衝突計算
-      cube.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0,1f,2f),ForceMode.Impulse);
-			// cube.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(2f, 0, 0),ForceMode.Impulse);
-    }
+		Text debug_text = debugCanvas.GetComponent<Text>();
+		debug_text.text = "OnGameStart";
+	}
+
+	void start() {
+		Text debug_text = debugCanvas.GetComponent<Text>();
+		debug_text.text = "start";
+	}
+
+	void update() {
+		Debug.Log("update");
+		Text debug_text = debugCanvas.GetComponent<Text>();
+		debug_text.text = 10.ToString();
+	}
+
+	protected override void OnPlayerValueUpdate() {
+		Text debug_text = debugCanvas.GetComponent<Text>();
+		debug_text.text = "update";
+
 	}
 
 }
+// }

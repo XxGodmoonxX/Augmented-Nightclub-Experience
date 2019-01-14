@@ -92,6 +92,15 @@ public class GameController : PlacenotePunMultiplayerBehaviour
             player.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
         }
     }
+    //SphereGenerator
+    // public void RegisterPlayer (SphereGenerator newPlayer)
+    // {
+    //     mPlayerList.Add (newPlayer);
+    //     foreach (SphereGenerator player in mPlayerList)
+    //     {
+    //         player.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
+    //     }
+    // }
 
     /// <summary>
     /// Registers the moon.

@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6942cd848756346678347e0fb18cee96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 240826885}
 --- !u!114 &347910160 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114799599235067974, guid: 69b37053145944d76bd72fc4c0c0780e,
@@ -553,6 +554,11 @@ Prefab:
     - target: {fileID: 114607046133937254, guid: a97f04f5db60b495ca9ea27aa23d89fc,
         type: 2}
       propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494644304598136, guid: a97f04f5db60b495ca9ea27aa23d89fc,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

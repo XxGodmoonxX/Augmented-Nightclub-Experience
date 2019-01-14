@@ -22,6 +22,8 @@ namespace UnityEngine.XR.iOS
 
 		public float referenceImagePhysicalSize;
 
+		//isTracked
+		public int isTracked;
 
 	};
 
@@ -38,6 +40,8 @@ namespace UnityEngine.XR.iOS
 
 
 		public string identifier { get { return Marshal.PtrToStringAuto(imageAnchorData.ptrIdentifier); } }
+		//isTracked
+		public bool isTracked { get {return imageAnchorData.isTracked != 0; } }
 
 		public Matrix4x4 transform { 
 			get { 

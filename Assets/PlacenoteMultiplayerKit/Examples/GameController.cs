@@ -10,6 +10,7 @@ using Placenote;
 public class GameController : PlacenotePunMultiplayerBehaviour
 {
     private List<PlayerController> mPlayerList;
+    private List<PlayerController> mPlayerListSphere;
     private MoonController mSampleMoon;
 
     #region Singleton
@@ -40,6 +41,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
         {
             sInstance = this;
             mPlayerList = new List<PlayerController> ();
+            mPlayerListSphere = new List<PlayerController> ();
         }
     }
 
@@ -75,6 +77,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     {
         mSampleMoon = null;
         mPlayerList = new List<PlayerController> ();
+        mPlayerListSphere = new List<PlayerController> ();
     }
     #endregion Override functions
 
@@ -92,16 +95,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
             player.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
         }
     }
-    //SphereGenerator
-    // public void RegisterPlayer (SphereGenerator newPlayer)
-    // {
-    //     mPlayerList.Add (newPlayer);
-    //     foreach (SphereGenerator player in mPlayerList)
-    //     {
-    //         player.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
-    //     }
-    // }
-
+    
     /// <summary>
     /// Registers the moon.
     /// Hides/Shows moon based on if local client is playing or not.
@@ -112,5 +106,17 @@ public class GameController : PlacenotePunMultiplayerBehaviour
         mSampleMoon = newMoon;
         mSampleMoon.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
     }
+
+    //Sphere
+    /// <param name="newSphere">New Sphere.</param>
+    // public void RegisterSphere (SphereController newSphere)
+    // {
+    //     mPlayerListSphere.Add (newSphere);
+    //     foreach (SphereController player in mPlayerListSphere)
+    //     {
+    //         sphere.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
+    //     }
+    // }
+
     #endregion Registering objects
 }

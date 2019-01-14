@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 33640790989594940}
   - component: {fileID: 135869227035917686}
   - component: {fileID: 23157741082821980}
+  - component: {fileID: 114041813726908944}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -150,6 +151,18 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114041813726908944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1574393051919056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47d43dadc0cc47a2bf69db80217a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTransform: {fileID: 0}
 --- !u!114 &114710497940123114
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 64606644631193942}
   - component: {fileID: 23185557461621032}
   - component: {fileID: 65120485909404298}
+  - component: {fileID: 114918774227063442}
   m_Layer: 10
   m_Name: shadowPlane
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1345149043900264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.173, z: 1.058}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: -0.15, y: 0.15, z: -0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -203,3 +204,15 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114918774227063442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345149043900264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47d43dadc0cc47a2bf69db80217a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTransform: {fileID: 0}

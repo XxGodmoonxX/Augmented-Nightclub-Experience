@@ -19,7 +19,6 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	public Camera cam;
 
 	protected override void OnGameStart() {
-		Debug.Log("GameStart");
 
 		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);

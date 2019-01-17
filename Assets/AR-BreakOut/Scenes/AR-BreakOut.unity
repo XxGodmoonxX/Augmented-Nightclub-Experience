@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 240826885}
-  imageanchor: {fileID: 0}
+  imageanchor: {fileID: 20795500}
 --- !u!114 &347910160 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114799599235067974, guid: 69b37053145944d76bd72fc4c0c0780e,

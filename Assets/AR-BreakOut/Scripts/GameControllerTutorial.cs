@@ -27,7 +27,8 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 		// PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("Sphere", Vector3.forward, Quaternion.identity, 0);
 
-		// imageanchor.GetComponent<GenerateImageAnchor>.start();
+		imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
+		imageanchor.GetComponent<PhotonGenerateImageAnchor>().Start();
 	}
 
 	void update() {

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.iOS;
 
 public class GenerateImageAnchor : MonoBehaviour {
+// public class GenerateImageAnchor : PlacenotePunMultiplayerBehaviour {
 
 
 	[SerializeField]

@@ -18,12 +18,20 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 
 	public Camera cam;
 
+	public GameObject imageanchor;
+
 	protected override void OnGameStart() {
 
 		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("Sphere", Vector3.forward, Quaternion.identity, 0);
+
+		// imageanchor.GetComponent<GenerateImageAnchor>.start();
+	}
+
+	void update() {
+
 	}
 
 }

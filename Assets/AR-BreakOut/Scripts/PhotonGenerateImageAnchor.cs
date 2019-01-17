@@ -15,15 +15,19 @@ public class PhotonGenerateImageAnchor : MonoBehaviour {
 
 	private GameObject imageAnchorGO;
 
+	public void returnAccess() {
+		Debug.Log("Success return");
+	}
+
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		UnityARSessionNativeInterface.ARImageAnchorAddedEvent += AddImageAnchor;
 		UnityARSessionNativeInterface.ARImageAnchorUpdatedEvent += UpdateImageAnchor;
 		UnityARSessionNativeInterface.ARImageAnchorRemovedEvent += RemoveImageAnchor;
 
 	}
 
-	void AddImageAnchor(ARImageAnchor arImageAnchor)
+	public void AddImageAnchor(ARImageAnchor arImageAnchor)
 	{
 		Debug.LogFormat("image anchor added[{0}] : tracked => {1}", arImageAnchor.identifier, arImageAnchor.isTracked);
 		if (arImageAnchor.referenceImageName == referenceImage.imageName) {
@@ -34,7 +38,7 @@ public class PhotonGenerateImageAnchor : MonoBehaviour {
 		}
 	}
 
-	void UpdateImageAnchor(ARImageAnchor arImageAnchor)
+	public void UpdateImageAnchor(ARImageAnchor arImageAnchor)
 	{
 		Debug.LogFormat("image anchor updated[{0}] : tracked => {1}", arImageAnchor.identifier, arImageAnchor.isTracked);
 		if (arImageAnchor.referenceImageName == referenceImage.imageName) {
@@ -55,7 +59,7 @@ public class PhotonGenerateImageAnchor : MonoBehaviour {
 
 	}
 
-	void RemoveImageAnchor(ARImageAnchor arImageAnchor)
+	public void RemoveImageAnchor(ARImageAnchor arImageAnchor)
 	{
 		Debug.LogFormat("image anchor removed[{0}] : tracked => {1}", arImageAnchor.identifier, arImageAnchor.isTracked);
 		if (imageAnchorGO) {
@@ -64,7 +68,7 @@ public class PhotonGenerateImageAnchor : MonoBehaviour {
 
 	}
 
-	void OnDestroy()
+	public void OnDestroy()
 	{
 		UnityARSessionNativeInterface.ARImageAnchorAddedEvent -= AddImageAnchor;
 		UnityARSessionNativeInterface.ARImageAnchorUpdatedEvent -= UpdateImageAnchor;
@@ -73,7 +77,7 @@ public class PhotonGenerateImageAnchor : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		
 	}
 }

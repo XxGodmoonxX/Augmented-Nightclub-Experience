@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &20795501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,12 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 240826885}
-  m_HitTransform: {fileID: 0}
-  maxRayDistance: 30
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  debugCanvas: {fileID: 0}
 --- !u!114 &347910160 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114799599235067974, guid: 69b37053145944d76bd72fc4c0c0780e,

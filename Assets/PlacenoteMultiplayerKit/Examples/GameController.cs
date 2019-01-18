@@ -107,16 +107,16 @@ public class GameController : PlacenotePunMultiplayerBehaviour
         mSampleMoon.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
     }
 
-    //Sphere
+    //Sphereを登録…出来るのかな？
     /// <param name="newSphere">New Sphere.</param>
-    // public void RegisterSphere (SphereController newSphere)
-    // {
-    //     mPlayerListSphere.Add (newSphere);
-    //     foreach (SphereController player in mPlayerListSphere)
-    //     {
-    //         sphere.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
-    //     }
-    // }
+    public void RegisterSphere (SphereController newSphere)
+    {
+        mPlayerListSphere.Add (newSphere);
+        foreach (SphereController sphere in mPlayerListSphere)
+        {
+            sphere.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
+        }
+    }
 
     #endregion Registering objects
 }

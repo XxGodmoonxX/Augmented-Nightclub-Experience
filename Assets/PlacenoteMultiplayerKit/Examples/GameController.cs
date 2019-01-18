@@ -10,7 +10,7 @@ using Placenote;
 public class GameController : PlacenotePunMultiplayerBehaviour
 {
     private List<PlayerController> mPlayerList;
-    private List<PlayerController> mPlayerListSphere;
+    private List<SphereController> mPlayerListSphere;
     private MoonController mSampleMoon;
 
     #region Singleton
@@ -41,7 +41,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
         {
             sInstance = this;
             mPlayerList = new List<PlayerController> ();
-            mPlayerListSphere = new List<PlayerController> ();
+            mPlayerListSphere = new List<SphereController> ();
         }
     }
 
@@ -77,7 +77,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     {
         mSampleMoon = null;
         mPlayerList = new List<PlayerController> ();
-        mPlayerListSphere = new List<PlayerController> ();
+        mPlayerListSphere = new List<SphereController> ();
     }
     #endregion Override functions
 

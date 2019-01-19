@@ -61,13 +61,24 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     protected override void OnGameStart ()
     {
         // Only instantiate moon if one doesn't already exist.
-        if (mSampleMoon == null)
-            PhotonNetwork.Instantiate ("SampleMoon", Vector3.zero, Quaternion.identity, 0);
-        // If a moon already does exist then set it to active.
-        else
-            mSampleMoon.gameObject.SetActive (true);
+        // if (mSampleMoon == null)
+        //     PhotonNetwork.Instantiate ("SampleMoon", Vector3.zero, Quaternion.identity, 0);
+        // // If a moon already does exist then set it to active.
+        // else
+        //     mSampleMoon.gameObject.SetActive (true);
         // Create player
         PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
+    }
+
+    protected virtual void update() {
+        Debug.Log("Update!!!!!!");
+        //タップしたら1回発動
+  	    if (0 < Input.touchCount) {
+          if (Input.GetTouch(0).phase == TouchPhase.Began) {
+            // Create player
+            PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
+          }
+        }
     }
 
     /// <summary>
@@ -111,6 +122,7 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     /// <param name="newSphere">New Sphere.</param>
     public void RegisterSphere (SphereController newSphere)
     {
+        //たぶん関数呼び出されるごとに新しくSphere登録される
         mPlayerListSphere.Add (newSphere);
         foreach (SphereController sphere in mPlayerListSphere)
         {

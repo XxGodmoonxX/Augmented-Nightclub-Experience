@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Placenote;
+using UnityEngine.UI; //Text使うため
 
 /// <summary>
 /// Instantiates moon and player prebabs.
@@ -12,6 +13,8 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     private List<PlayerController> mPlayerList;
     private List<SphereController> mPlayerListSphere;
     private MoonController mSampleMoon;
+
+    public GameObject breakOutText;
 
     #region Singleton
     private static GameController sInstance = null;
@@ -42,6 +45,8 @@ public class GameController : PlacenotePunMultiplayerBehaviour
             sInstance = this;
             mPlayerList = new List<PlayerController> ();
             mPlayerListSphere = new List<SphereController> ();
+
+            // breakOutText.GetComponent<BreakOutText>().breakOutAwake();
         }
     }
 
@@ -68,13 +73,18 @@ public class GameController : PlacenotePunMultiplayerBehaviour
         //     mSampleMoon.gameObject.SetActive (true);
         // Create player
         PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
+
+        // breakOutText.GetComponent<BreakOutText>().breakOutOnGameStart();
     }
 
-    protected virtual void update() {
-        Debug.Log("Update!!!!!!");
+    void update() {
+        // breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
+
         //タップしたら1回発動
   	    if (0 < Input.touchCount) {
           if (Input.GetTouch(0).phase == TouchPhase.Began) {
+            //Instantiateしてるのか
+            // breakOutText.GetComponent<BreakOutText>().breakOutInstantiate();
             // Create player
             PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
           }

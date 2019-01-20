@@ -19,8 +19,15 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	public Camera cam;
 
 	public GameObject imageanchor;
+  public GameObject breakOutText;
+
+	void Awake() {
+    breakOutText.GetComponent<BreakOutText>().breakOutAwake();
+	}
+
 
 	protected override void OnGameStart() {
+    breakOutText.GetComponent<BreakOutText>().breakOutOnGameStart();
 
 		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
@@ -33,7 +40,7 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	}
 
 	void update() {
-
+    breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
 	}
 
 }

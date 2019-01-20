@@ -9,6 +9,8 @@ public class SphereController : Photon.MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    CameraTransform = FindObjectOfType<Camera> ().transform;
+
 		// Register this object to the current game controller.
     // This is important so that all clients have a reference to this object.
     //  GameController.Instance.RegisterSphere (this);

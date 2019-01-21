@@ -48,18 +48,7 @@ public class SphereController : Photon.MonoBehaviour {
 				// This is important so that all clients have a reference to this object.
 		    breakOutText.GetComponent<BreakOutText>().breakOutInstantiate();
 
-				// GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-				// Material material = new Material(Shader.Find("Diffuse")) {
-				// 	// color = new Color(Random.value, Random.value, Random.value)
-				// 	color = new Color(0, 0, 200)
-				// };
-				// sphere.GetComponent<Renderer>().material = material;
-				// sphere.transform.position = CameraTransform.transform.TransformPoint(0, 0, 0.5f);
-				// float sphereSize = 1.0f;
-				// sphere.transform.localScale = new Vector3(sphereSize, sphereSize, sphereSize);
-				// gameObject.AddComponent<Rigidbody>();
-				// gameObject.AddComponent<Rigidbody>().AddForce(CameraTransform.TransformDirection(0, 0, 7f), ForceMode.Impulse);
-
+				gameObject.transform.position = CameraTransform.position;
 				PhotonNetwork.Instantiate("BlueSphere", Vector3.zero, Quaternion.identity, 0);
 			}
 		}

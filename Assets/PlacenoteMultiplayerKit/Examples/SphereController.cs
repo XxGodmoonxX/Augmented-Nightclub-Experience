@@ -17,7 +17,7 @@ public class SphereController : Photon.MonoBehaviour {
 
 		// Register this object to the current game controller.
     // This is important so that all clients have a reference to this object.
-    // GameController.Instance.RegisterSphere (a);
+    // GameController.Instance.RegisterSphere (this);
 	}
 	
 	// Update is called once per frame

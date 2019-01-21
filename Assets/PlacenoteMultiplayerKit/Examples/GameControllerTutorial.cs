@@ -20,11 +20,11 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 
 	public GameObject imageanchor;
   public GameObject breakOutText;
+  public GameObject blueSphereController;
 
 	void Awake() {
     breakOutText.GetComponent<BreakOutText>().breakOutAwake();
 	}
-
 
 	protected override void OnGameStart() {
     breakOutText.GetComponent<BreakOutText>().breakOutOnGameStart();
@@ -37,10 +37,14 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 		// PhotonNetwork.Instantiate("Sphere", Vector3.right, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("RedSphere", cam.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("BlueSphere", cam.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
+		// blueSphereController.GetComponent<BlueSphereController>().Start();
+		// blueSphereController.GetComponent<BlueSphereController>().Update();
 
 		//画像認識
 		imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
 		imageanchor.GetComponent<PhotonGenerateImageAnchor>().Start();
+
+
 	}
 
 	void update() {

@@ -186,6 +186,10 @@ namespace UnityEngine.XR.iOS
         public bool getPointCloudData;
         public bool enableLightEstimation;
         public bool enableAutoFocus;
+        //
+        public int maximumNumberOfTrackedImages;
+        public string referenceImagesGroupName;
+        //
         public IntPtr videoFormat;
         public string arResourceGroupName;
         public bool IsSupported { get { return IsARKitWorldTrackingSessionConfigurationSupported(); } private set { } }
@@ -195,6 +199,10 @@ namespace UnityEngine.XR.iOS
             bool getPointCloudData = false,
             bool enableLightEstimation = false,
             bool enableAutoFocus = true,
+            //
+            int maximumNumberOfTrackedImages = 0,
+			string refImageGroup = null,
+            //
             IntPtr vidFormat = default(IntPtr),
             string arResourceGroup = null)
         {
@@ -205,6 +213,10 @@ namespace UnityEngine.XR.iOS
             this.enableAutoFocus = enableAutoFocus;
             this.videoFormat = vidFormat;
             this.arResourceGroupName = arResourceGroup;
+            //
+            this.maximumNumberOfTrackedImages = maximumNumberOfTrackedImages;
+			this.referenceImagesGroupName = refImageGroup;
+            //
 
         }
 

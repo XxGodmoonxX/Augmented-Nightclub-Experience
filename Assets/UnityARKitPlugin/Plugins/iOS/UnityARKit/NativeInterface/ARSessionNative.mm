@@ -331,12 +331,12 @@ inline void GetARSessionConfigurationFromARKitWorldTrackingSessionConfiguration(
         }
     }
     
-    if (UnityIsARKit_2_0_Supported())
-    {
-        appleConfig.initialWorldMap = (__bridge ARWorldMap*)unityConfig.ptrWorldMap;
-        appleConfig.environmentTexturing = GetAREnvironmentTexturingFromUnityAREnvironmentTexturing(unityConfig.environmentTexturing);
+    // if (UnityIsARKit_2_0_Supported())
+    // {
+    //     appleConfig.initialWorldMap = (__bridge ARWorldMap*)unityConfig.ptrWorldMap;
+    //     appleConfig.environmentTexturing = GetAREnvironmentTexturingFromUnityAREnvironmentTexturing(unityConfig.environmentTexturing);
       
-    }
+    // }
 }
 
 inline void GetARSessionConfigurationFromARKitSessionConfiguration(ARKitSessionConfiguration& unityConfig, ARConfiguration* appleConfig)

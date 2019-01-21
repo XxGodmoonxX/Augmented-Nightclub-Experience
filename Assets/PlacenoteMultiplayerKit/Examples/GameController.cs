@@ -80,15 +80,16 @@ public class GameController : PlacenotePunMultiplayerBehaviour
     void update() {
         // breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
 
-        //タップしたら1回発動
-  	    if (0 < Input.touchCount) {
-          if (Input.GetTouch(0).phase == TouchPhase.Began) {
-            //Instantiateしてるのか
-            // breakOutText.GetComponent<BreakOutText>().breakOutInstantiate();
-            // Create player
-            PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
-          }
-        }
+        //動いてない。
+        // //タップしたら1回発動
+  	    // if (0 < Input.touchCount) {
+        //   if (Input.GetTouch(0).phase == TouchPhase.Began) {
+        //     //Instantiateしてるのか
+        //     // breakOutText.GetComponent<BreakOutText>().breakOutInstantiate();
+        //     // Create player
+        //     PhotonNetwork.Instantiate ("Player", Vector3.zero, Quaternion.identity, 0);
+        //   }
+        // }
     }
 
     /// <summary>
@@ -139,6 +140,6 @@ public class GameController : PlacenotePunMultiplayerBehaviour
             sphere.gameObject.SetActive (PlacenoteMultiplayerManager.Instance.IsPlaying);
         }
     }
-
+    
     #endregion Registering objects
 }

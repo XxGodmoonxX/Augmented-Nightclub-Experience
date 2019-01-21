@@ -29,10 +29,12 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	protected override void OnGameStart() {
     breakOutText.GetComponent<BreakOutText>().breakOutOnGameStart();
 
-		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
+		// PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("Sphere", Vector3.zero, Quaternion.identity, 0);
+		// PhotonNetwork.Instantiate("Sphere", Vector3.forward, Quaternion.identity, 1);
+		// PhotonNetwork.Instantiate("Sphere", Vector3.right, Quaternion.identity, 2);
 
 		//画像認識
 		imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
@@ -40,7 +42,7 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	}
 
 	void update() {
-    breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
+    // breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
 	}
 
 }

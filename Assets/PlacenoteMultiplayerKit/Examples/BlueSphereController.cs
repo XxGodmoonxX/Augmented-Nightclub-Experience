@@ -9,17 +9,20 @@ public class BlueSphereController : Photon.MonoBehaviour {
   public GameObject breakOutText;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
     CameraTransform = FindObjectOfType<Camera> ().transform;
 		breakOutText = GameObject.Find("BreakOutText");
 
 		// Register this object to the current game controller.
     // This is important so that all clients have a reference to this object.
     // GameController.Instance.RegisterSphere (this);
+
+		// InvokeRepeating("destroy", 2f, 2f);
+		// InvokeRepeating("startBlueSphere", 2.5f, 2f);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		// If this player is not being controlled by the local client
     // then do not update its position. Each client is responsible to update
     // its own player.
@@ -38,7 +41,6 @@ public class BlueSphereController : Photon.MonoBehaviour {
 
 		//タップしたら1回発動
   	if (0 < Input.touchCount) {
-			//タップしたら1回のみ
       if (Input.GetTouch(0).phase == TouchPhase.Began) {
 			//画面触っている間
       // if (Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Moved) {
@@ -50,5 +52,21 @@ public class BlueSphereController : Photon.MonoBehaviour {
 				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, 0);
 			}
 		}
+		//タップ終わり
+  	// if (0 < Input.touchCount) {
+    // 	if (Input.GetTouch(0).phase == TouchPhase.Ended) {
+		//     breakOutText.GetComponent<BreakOutText>().breakOutDestroy();
+		// 		PhotonNetwork.Destroy(this.photonView);
+		// 	}
+		// }
+	}
+
+	void startBlueSphere() {
+		PhotonNetwork.Instantiate("BlueSphere", CameraTransform.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
+	}
+
+	void destroy() {
+		PhotonNetwork.Destroy(this.photonView);
+		breakOutText.GetComponent<BreakOutText>().breakOutDestroy();
 	}
 }

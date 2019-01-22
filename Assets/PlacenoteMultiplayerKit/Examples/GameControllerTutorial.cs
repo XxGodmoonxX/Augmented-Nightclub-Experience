@@ -12,10 +12,6 @@ using UnityEngine.UI; //Text使うため
 // {
 public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 
-	float x = 0;
-	float y = 0;
-	float z = 0;
-
 	public Camera cam;
 
 	public GameObject imageanchor;

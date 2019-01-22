@@ -49,7 +49,8 @@ public class BlueSphereController : Photon.MonoBehaviour {
 		    breakOutText.GetComponent<BreakOutText>().breakOutInstantiate();
 
 				// PhotonNetwork.Instantiate("BlueSphere", Vector3.zero, Quaternion.identity, 0);
-				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, 0);
+				// BlueSphere.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 7f),ForceMode.Impulse);
+				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, 0);
 			}
 		}
 		//タップ終わり

@@ -39,6 +39,10 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 		breakOutText.text = "Destroy!!!";
 	}
 
+	public void breakOutCollision () {
+		breakOutText.text = "Collision!!!";
+	}
+
 	void update() {
 		breakOutText.text = "Update in breakouttext.cs";
 	}

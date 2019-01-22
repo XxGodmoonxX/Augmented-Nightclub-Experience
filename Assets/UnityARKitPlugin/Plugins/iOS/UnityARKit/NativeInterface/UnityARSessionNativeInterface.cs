@@ -187,8 +187,8 @@ namespace UnityEngine.XR.iOS
         public bool enableLightEstimation;
         public bool enableAutoFocus;
         //
-        public int maximumNumberOfTrackedImages;
-        public string referenceImagesGroupName;
+        // public int maximumNumberOfTrackedImages;
+        // public string referenceImagesGroupName;
         //
         public IntPtr videoFormat;
         public string arResourceGroupName;
@@ -200,8 +200,8 @@ namespace UnityEngine.XR.iOS
             bool enableLightEstimation = false,
             bool enableAutoFocus = true,
             //
-            int maximumNumberOfTrackedImages = 0,
-			string refImageGroup = null,
+            // int maximumNumberOfTrackedImages = 0,
+			// string refImageGroup = null,
             //
             IntPtr vidFormat = default(IntPtr),
             string arResourceGroup = null)
@@ -214,8 +214,8 @@ namespace UnityEngine.XR.iOS
             this.videoFormat = vidFormat;
             this.arResourceGroupName = arResourceGroup;
             //
-            this.maximumNumberOfTrackedImages = maximumNumberOfTrackedImages;
-			this.referenceImagesGroupName = refImageGroup;
+            // this.maximumNumberOfTrackedImages = maximumNumberOfTrackedImages;
+			// this.referenceImagesGroupName = refImageGroup;
             //
 
         }

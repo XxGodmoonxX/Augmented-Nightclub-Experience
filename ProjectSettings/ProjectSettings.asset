@@ -324,10 +324,9 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Placenote needs camera access to display AR content.
-  locationUsageDescription: Placenote needs location access to display multiplayer
-    rooms.
-  microphoneUsageDescription: 
+  cameraUsageDescription: camera access to display AR content.
+  locationUsageDescription: location access to display multiplayer rooms.
+  microphoneUsageDescription: microphone
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
   switchSocketAllocatorPoolSize: 128

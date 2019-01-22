@@ -8,6 +8,8 @@ public class BlueSphereController : Photon.MonoBehaviour {
   public Transform CameraTransform;
   public GameObject breakOutText;
 
+	byte i = 0;
+
 	// Use this for initialization
 	public void Start () {
     CameraTransform = FindObjectOfType<Camera> ().transform;
@@ -50,7 +52,9 @@ public class BlueSphereController : Photon.MonoBehaviour {
 
 				// PhotonNetwork.Instantiate("BlueSphere", Vector3.zero, Quaternion.identity, 0);
 				// BlueSphere.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 7f),ForceMode.Impulse);
-				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, 0);
+				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, i);
+				// PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, i);
+				i++;
 			}
 		}
 		//タップ終わり
@@ -60,6 +64,13 @@ public class BlueSphereController : Photon.MonoBehaviour {
 		// 		PhotonNetwork.Destroy(this.photonView);
 		// 	}
 		// }
+	}
+
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.CompareTag("BreakOutCube")) {
+			breakOutText.GetComponent<BreakOutText>().breakOutCollision();
+			Destroy(collision.gameObject);
+		}
 	}
 
 	void startBlueSphere() {

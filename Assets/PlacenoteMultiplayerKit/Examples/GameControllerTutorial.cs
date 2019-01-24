@@ -39,8 +39,10 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 		// blueSphereController.GetComponent<BlueSphereController>().Update();
 
 		//画像認識
-		imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
-		imageanchor.GetComponent<PhotonGenerateImageAnchor>().Start();
+		// imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
+		// imageanchor.GetComponent<PhotonGenerateImageAnchor>().Start();
+		// imageanchor.SetActive (true);
+
 		//
 		// soundObject.GetComponent<sound>().Start();
 		// soundObject.GetComponent<sound>().Update();

@@ -16,7 +16,7 @@ public class sound : MonoBehaviour {
 	// public GameObject soundCanvas; //Text
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		// 空の Audio Sourceを取得
 		audio = GetComponent<AudioSource>();
 		// Audio Source の Audio Clip をマイク入力に設定
@@ -33,7 +33,7 @@ public class sound : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		//音声データの周波数成分を解析する
 		float[] spectrum = new float[256];
 		//音声出力のサンプリングレートを F , spectrum の長さを Q とすると spectrum[N] には N * F/2 / Q Hzの周波数成分が含まれています。

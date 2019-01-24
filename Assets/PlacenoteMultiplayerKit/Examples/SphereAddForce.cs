@@ -13,6 +13,6 @@ public class SphereAddForce : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 5f),ForceMode.Impulse);
+		gameObject.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 2f),ForceMode.Impulse);
 	}
 }

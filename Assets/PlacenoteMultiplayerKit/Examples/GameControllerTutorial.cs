@@ -17,6 +17,8 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	public GameObject imageanchor;
   public GameObject breakOutText;
   public GameObject blueSphereController;
+	public GameObject soundObject;
+	public GameObject fromCube;
 
 	void Awake() {
     breakOutText.GetComponent<BreakOutText>().breakOutAwake();
@@ -39,8 +41,12 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 		//画像認識
 		imageanchor.GetComponent<PhotonGenerateImageAnchor>().returnAccess();
 		imageanchor.GetComponent<PhotonGenerateImageAnchor>().Start();
-
-
+		//
+		// soundObject.GetComponent<sound>().Start();
+		// soundObject.GetComponent<sound>().Update();
+		//
+		// fromCube.GetComponent<FromCube>().Start();
+		// fromCube.GetComponent<FromCube>().Update();
 	}
 
 	void update() {

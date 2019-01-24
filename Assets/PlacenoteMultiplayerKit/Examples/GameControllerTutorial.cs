@@ -27,7 +27,7 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 	protected override void OnGameStart() {
     breakOutText.GetComponent<BreakOutText>().breakOutOnGameStart();
 
-		// PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
+		PhotonNetwork.Instantiate("player", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("shadowPlane", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("SampleMoon", Vector3.zero, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("Sphere", Vector3.zero, Quaternion.identity, 0);

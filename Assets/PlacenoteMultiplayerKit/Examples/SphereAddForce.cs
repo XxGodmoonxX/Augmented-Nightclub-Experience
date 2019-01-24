@@ -8,7 +8,7 @@ public class SphereAddForce : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+    cam = FindObjectOfType<Camera> ();
 	}
 	
 	// Update is called once per frame

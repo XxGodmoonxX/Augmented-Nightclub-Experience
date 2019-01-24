@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114790143062410012}
   - component: {fileID: 114408105068098684}
   - component: {fileID: 114776854639121262}
+  - component: {fileID: 114847668526428430}
   m_Layer: 0
   m_Name: BlueSphere
   m_TagString: Untagged
@@ -234,6 +235,18 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114847668526428430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122710875595318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337cf541759364b89b56c154609bf183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!135 &135877929983316956
 SphereCollider:
   m_ObjectHideFlags: 1

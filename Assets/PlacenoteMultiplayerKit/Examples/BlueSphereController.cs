@@ -73,12 +73,12 @@ public class BlueSphereController : Photon.MonoBehaviour {
 		}
 	}
 
-	void startBlueSphere() {
-		PhotonNetwork.Instantiate("BlueSphere", CameraTransform.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
-	}
+	// void startBlueSphere() {
+	// 	PhotonNetwork.Instantiate("BlueSphere", CameraTransform.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
+	// }
 
-	void destroy() {
-		PhotonNetwork.Destroy(this.photonView);
-		breakOutText.GetComponent<BreakOutText>().breakOutDestroy();
-	}
+	// void destroy() {
+	// 	PhotonNetwork.Destroy(this.photonView);
+	// 	breakOutText.GetComponent<BreakOutText>().breakOutDestroy();
+	// }
 }

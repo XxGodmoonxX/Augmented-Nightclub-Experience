@@ -35,6 +35,7 @@ public class GameControllerTutorial : PlacenotePunMultiplayerBehaviour {
 		// PhotonNetwork.Instantiate("Sphere", Vector3.right, Quaternion.identity, 0);
 		// PhotonNetwork.Instantiate("RedSphere", cam.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
 		PhotonNetwork.Instantiate("BlueSphere", cam.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
+		PhotonNetwork.Instantiate("RedSphere", cam.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);
 		// blueSphereController.GetComponent<BlueSphereController>().Start();
 		// blueSphereController.GetComponent<BlueSphereController>().Update();
 

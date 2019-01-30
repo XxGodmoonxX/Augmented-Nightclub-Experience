@@ -10,6 +10,8 @@ public class BlueSphereController : Photon.MonoBehaviour {
 
 	byte i = 0;
 
+	// int id = PhotonNetwork.player.ID;
+
 	// Use this for initialization
 	public void Start () {
     CameraTransform = FindObjectOfType<Camera> ().transform;
@@ -34,6 +36,7 @@ public class BlueSphereController : Photon.MonoBehaviour {
 		}
 
 		breakOutText.GetComponent<BreakOutText>().breakOutUpdate();
+		int id = PhotonNetwork.player.ID;
 
 		// GameController.Instance.RegisterSphere(b);
 
@@ -52,7 +55,12 @@ public class BlueSphereController : Photon.MonoBehaviour {
 
 				// PhotonNetwork.Instantiate("BlueSphere", Vector3.zero, Quaternion.identity, 0);
 				// BlueSphere.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 7f),ForceMode.Impulse);
-				PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, i);
+				if (id == 1) {
+					PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, i);
+				}
+				if (id == 2) {
+					// PhotonNetwork.Instantiate("RedSphere", CameraTransform.position, Quaternion.identity, i);
+				}
 				// PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, i);
 				i++;
 			}

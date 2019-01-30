@@ -9,12 +9,18 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
   private Text breakOutText;
 
+	int id; //PhotonNetwork.player.ID を入れる
+
 	void Awake() {
     breakOutText = gameObject.GetComponent<Text> ();
 	}
 
+	void OnJoinedRoom() {
+		id = PhotonNetwork.player.ID;
+	}
+
 	public void breakOutAwake() {
-		breakOutText.text = "BreakOut Awake!!!";
+		breakOutText.text = "BreakOut Awake!!!" + id.ToString();
 	}
 
 	// Use this for initialization
@@ -28,7 +34,7 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	// Update is called once per frame
 	public void breakOutUpdate () {
-		breakOutText.text = "Update!!!";
+		breakOutText.text = "Update!!!" + id.ToString();
 	}
 
 	public void breakOutInstantiate () {

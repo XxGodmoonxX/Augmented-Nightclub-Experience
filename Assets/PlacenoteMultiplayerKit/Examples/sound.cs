@@ -16,6 +16,8 @@ public class sound : MonoBehaviour {
 	// public GameObject soundCanvas; //Text
 
 	public float volume;
+	
+	public float[] spectrumNum = new float[256];
 
 	// Use this for initialization
 	public void Start () {
@@ -68,10 +70,11 @@ public class sound : MonoBehaviour {
 		//音量取得
 		// float vol = GetAveragedVolume();
 		volume = GetAveragedVolume();
-		Debug.Log(volume);
+		// Debug.Log(volume);
 
 		//周波数解析、各周波数ごとの音量取得
 		for (int i = 0; i < spectrum.Length; i++) {
+			spectrumNum[i] = spectrum[i];
 		}
 	}
 

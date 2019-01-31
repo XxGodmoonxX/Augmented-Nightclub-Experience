@@ -22,7 +22,7 @@ public class SoundCube : MonoBehaviour {
 		float volume = soundObject.GetComponent<sound>().volume * adjustNum;
 		float cubeSize = 0.5f;
 		gameObject.transform.position = CameraTransform.TransformPoint(3f, 0, 5f); //カメラの位置に移動して右に1、前に1
-		gameObject.GetComponent<Renderer>().material.color = new Color(0, 1.0f, 0, 0.5f);
+		gameObject.GetComponent<Renderer>().material.color = new Color(0, 0f, 0, 0.5f);
     gameObject.transform.localScale = new Vector3(cubeSize * volume, cubeSize * volume, cubeSize * volume);
 	}
 }

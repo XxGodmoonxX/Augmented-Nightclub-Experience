@@ -78,7 +78,8 @@ public class RedSphereController : Photon.MonoBehaviour {
 		if (collision.gameObject.CompareTag("BreakOutCube")) {
 			breakOutText.GetComponent<BreakOutText>().breakOutCollision();
 			// Destroy(collision.gameObject);
-			collision.gameObject.GetComponent<Renderer>().material.color = Color.red;
+			// collision.gameObject.GetComponent<Renderer>().material.color = Color.red;
+			collision.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 0, 0, 0.5f);
 		}
 	}
 

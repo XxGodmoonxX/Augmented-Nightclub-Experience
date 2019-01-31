@@ -78,7 +78,8 @@ public class BlueSphereController : Photon.MonoBehaviour {
 		if (collision.gameObject.CompareTag("BreakOutCube")) {
 			breakOutText.GetComponent<BreakOutText>().breakOutCollision();
 			// Destroy(collision.gameObject);
-			collision.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+			// collision.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+			collision.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1.0f, 0.5f);
 		}
 	}
 

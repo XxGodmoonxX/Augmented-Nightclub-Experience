@@ -62,10 +62,25 @@ public class sound : MonoBehaviour {
 		//スマホ上にSoundのなんかの変数表示
 		// Text sound_text = soundCanvas.GetComponent<Text>();
 		// sound_text.text = noteNumber.ToString();
+
+		//音量取得
+		float vol = GetAveragedVolume();
+		Debug.Log(vol);
 	}
 
 	//周波数が計算できたので、最後にこれを音名に変換します。周波数と音名の対応はMIDI tuning standardによると以下のようにして計算できます。
 	public static int CalculateNoteNumberFromFrequency(float freq) {
   	return Mathf.FloorToInt(69 + 12 * Mathf.Log(freq / 440, 2));
 	}
+
+	float GetAveragedVolume() {
+    float[] data = new float[256];
+    float a = 0;
+    audio.GetOutputData(data, 0);
+    foreach (float s in data)
+    {
+      a += Mathf.Abs(s);
+    }
+    return a / 256.0f;
+  }
 }

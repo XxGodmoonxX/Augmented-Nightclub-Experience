@@ -11,12 +11,22 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	int id; //PhotonNetwork.player.ID を入れる
 
+	GameObject[] BreakOutCubeTags; //BreakOutCubeってタグついてるGameobject取得する用
+
+	int CubeBlueNum = 0;
+	int CubeRedNum = 0;
+
+
 	void Awake() {
     breakOutText = gameObject.GetComponent<Text> ();
+		BreakOutCubeTags = GameObject.FindGameObjectsWithTag ("BreakOutCube"); //BreakOutCubeってタグついてるGameobject取得
 	}
 
 	void OnJoinedRoom() {
-		id = PhotonNetwork.player.ID;
+		id = PhotonNetwork.player.ID; //PhotonNetwork.player.ID を入れる
+	}
+
+	void update() {
 	}
 
 	public void breakOutAwake() {
@@ -34,7 +44,18 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	// Update is called once per frame
 	public void breakOutUpdate () {
+		// Debug.Log(BreakOutCubeTags.length);
+		// for (int i = 0; i < BreakOutCubeTags.length; i++) {
+		// 	if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == new Color(0, 0, 1.0f, 0.5f)) { //Cube青くなってる数
+		// 		CubeBlueNum ++;
+		// 	}
+		// 	if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == new Color(1.0f, 0, 0, 0.5f)) { //Cube赤くなってる数
+		// 		CubeRedNum ++;
+		// 	}
+		// }
+
 		breakOutText.text = "Update!!!" + id.ToString();
+		// breakOutText.text = "Update!!!" + id.ToString() + CubeBlueNum.ToString() + CubeRedNum.ToString();
 	}
 
 	public void breakOutInstantiate () {
@@ -47,9 +68,5 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	public void breakOutCollision () {
 		breakOutText.text = "Collision!!!";
-	}
-
-	void update() {
-		breakOutText.text = "Update in breakouttext.cs";
 	}
 }

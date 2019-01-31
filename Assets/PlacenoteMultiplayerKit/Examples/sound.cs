@@ -43,23 +43,23 @@ public class sound : MonoBehaviour {
 		// Debug.Log(spectrum.Length);
 
 		//ピッチの取得
-		var maxIndex = 0;
-		var maxValue = 0.0f;
-		for (int i = 0; i < spectrum.Length; i++) {
-			var val = spectrum[i];
-			if (val > maxValue) {
-				// maxValue が最も大きい周波数成分の値で
-				maxValue = val;
-				// maxIndex がそのインデックス。欲しいのはこっち。
-				maxIndex = i;
-			}
-		}
+		// var maxIndex = 0;
+		// var maxValue = 0.0f;
+		// for (int i = 0; i < spectrum.Length; i++) {
+		// 	var val = spectrum[i];
+		// 	if (val > maxValue) {
+		// 		// maxValue が最も大きい周波数成分の値で
+		// 		maxValue = val;
+		// 		// maxIndex がそのインデックス。欲しいのはこっち。
+		// 		maxIndex = i;
+		// 	}
+		// }
 
-		var freq = maxIndex * AudioSettings.outputSampleRate / 2 / spectrum.Length;
+		// var freq = maxIndex * AudioSettings.outputSampleRate / 2 / spectrum.Length;
 		// 周波数からMIDIノートナンバーを計算
-    var noteNumber = CalculateNoteNumberFromFrequency(freq);
+    // var noteNumber = CalculateNoteNumberFromFrequency(freq);
 		// Debug.Log(noteNumber);
-		noteNumberNum = noteNumber;
+		// noteNumberNum = noteNumber;
 
 		//スマホ上にSoundのなんかの変数表示
 		// Text sound_text = soundCanvas.GetComponent<Text>();
@@ -69,12 +69,16 @@ public class sound : MonoBehaviour {
 		// float vol = GetAveragedVolume();
 		volume = GetAveragedVolume();
 		Debug.Log(volume);
+
+		//周波数解析、各周波数ごとの音量取得
+		for (int i = 0; i < spectrum.Length; i++) {
+		}
 	}
 
 	//周波数が計算できたので、最後にこれを音名に変換します。周波数と音名の対応はMIDI tuning standardによると以下のようにして計算できます。
-	public static int CalculateNoteNumberFromFrequency(float freq) {
-  	return Mathf.FloorToInt(69 + 12 * Mathf.Log(freq / 440, 2));
-	}
+	// public static int CalculateNoteNumberFromFrequency(float freq) {
+  // 	return Mathf.FloorToInt(69 + 12 * Mathf.Log(freq / 440, 2));
+	// }
 
 	float GetAveragedVolume() {
     float[] data = new float[256];

@@ -18,10 +18,10 @@ public class SoundCube : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Update () {
-		adjustNum = 500;
+		adjustNum = 100; //音量調整用。
 		float volume = soundObject.GetComponent<sound>().volume * adjustNum;
 		float cubeSize = 0.5f;
-		gameObject.transform.position = CameraTransform.TransformPoint(1.5f, 0, 1.5f); //カメラの位置に移動して右に1、前に1
+		gameObject.transform.position = CameraTransform.TransformPoint(3f, 0, 5f); //カメラの位置に移動して右に1、前に1
 		gameObject.GetComponent<Renderer>().material.color = new Color(0, 1.0f, 0, 0.5f);
     gameObject.transform.localScale = new Vector3(cubeSize * volume, cubeSize * volume, cubeSize * volume);
 	}

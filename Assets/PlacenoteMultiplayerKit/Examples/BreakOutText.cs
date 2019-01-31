@@ -9,6 +9,9 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
   private Text breakOutText;
 
+	public GameObject soundObject;
+
+
 	int id; //PhotonNetwork.player.ID を入れる
 
 	GameObject[] BreakOutCubeTags; //BreakOutCubeってタグついてるGameobject取得する用
@@ -16,6 +19,7 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 	int CubeBlueNum = 0;
 	int CubeRedNum = 0;
 
+	float volume; //音量取得用
 
 	void Awake() {
     breakOutText = gameObject.GetComponent<Text> ();
@@ -54,8 +58,12 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 		// 	}
 		// }
 
-		breakOutText.text = "Update!!!" + id.ToString();
+		// breakOutText.text = "Update!!!" + id.ToString();
+		breakOutText.text = "ID" + id.ToString();
 		// breakOutText.text = "Update!!!" + id.ToString() + CubeBlueNum.ToString() + CubeRedNum.ToString();
+
+		// volume = soundObject.GetComponent<sound>().volume;
+
 	}
 
 	public void breakOutInstantiate () {

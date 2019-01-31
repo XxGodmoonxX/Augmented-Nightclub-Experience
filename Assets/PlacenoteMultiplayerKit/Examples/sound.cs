@@ -15,6 +15,8 @@ public class sound : MonoBehaviour {
 	//スマホ上にSoundのなんかの変数表示
 	// public GameObject soundCanvas; //Text
 
+	public float volume;
+
 	// Use this for initialization
 	public void Start () {
 		// 空の Audio Sourceを取得
@@ -64,8 +66,9 @@ public class sound : MonoBehaviour {
 		// sound_text.text = noteNumber.ToString();
 
 		//音量取得
-		float vol = GetAveragedVolume();
-		Debug.Log(vol);
+		// float vol = GetAveragedVolume();
+		volume = GetAveragedVolume();
+		Debug.Log(volume);
 	}
 
 	//周波数が計算できたので、最後にこれを音名に変換します。周波数と音名の対応はMIDI tuning standardによると以下のようにして計算できます。

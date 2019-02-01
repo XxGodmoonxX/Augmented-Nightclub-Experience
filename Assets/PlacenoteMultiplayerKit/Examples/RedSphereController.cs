@@ -60,9 +60,9 @@ public class RedSphereController : Photon.MonoBehaviour {
 				}
 				if (id == 2) {
 					PhotonNetwork.Instantiate("RedSphere", CameraTransform.position, Quaternion.identity, i);
+					i++;
 				}
 				// PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, i);
-				i++;
 			}
 		}
 		//タップ終わり

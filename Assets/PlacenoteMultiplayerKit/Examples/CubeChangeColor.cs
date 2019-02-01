@@ -8,7 +8,8 @@ public class CubeChangeColor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("CubeColorChangeWhite", 30f, 30f);
+		InvokeRepeating("CubeColorChangeWhite", 30f, 30f); //30秒ごとにCubeColorChangeWhite()が働く、つまりまっさらに戻る
+		
 		// BreakOutCubeTags = GameObject.FindGameObjectsWithTag ("BreakOutCube"); //BreakOutCubeってタグついてるGameobject取得
 	}
 	

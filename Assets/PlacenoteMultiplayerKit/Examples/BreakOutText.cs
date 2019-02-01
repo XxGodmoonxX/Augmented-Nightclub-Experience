@@ -21,6 +21,12 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	float volume; //音量取得用
 
+	public GameObject blueSphere;
+	int blueSphereCollisionNum = 0;
+	int blueSphereTapNum = 0;
+
+	int tapNum;
+
 	void Awake() {
     breakOutText = gameObject.GetComponent<Text> ();
 		BreakOutCubeTags = GameObject.FindGameObjectsWithTag ("BreakOutCube"); //BreakOutCubeってタグついてるGameobject取得
@@ -60,15 +66,23 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 		// }
 
 		// breakOutText.text = "Update!!!" + id.ToString();
-		breakOutText.text = "ID" + id.ToString();
+		// breakOutText.text = "ID" + id.ToString();
 		// breakOutText.text = "Update!!!" + id.ToString() + CubeBlueNum.ToString() + CubeRedNum.ToString();
 
 		// volume = soundObject.GetComponent<sound>().volume;
 
+		// blueSphereCollisionNum = blueSphere.GetComponent<BlueSphereController>().collisionNum;
+		// blueSphereTapNum = blueSphere.GetComponent<BlueSphereController>().tapNum;
+		// Debug.Log(blueSphereTapNum);
+
+		breakOutText.text = "Collision" + blueSphereCollisionNum.ToString() + "Tap" + blueSphereTapNum.ToString();
+
 	}
 
+	int num = 0;
 	public void breakOutInstantiate () {
 		breakOutText.text = "Instantiate!!!";
+		blueSphereTapNum ++; //0 2 5 9 14 20 27
 	}
 
 	public void breakOutDestroy () {
@@ -77,5 +91,6 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 
 	public void breakOutCollision () {
 		breakOutText.text = "Collision!!!";
+		blueSphereCollisionNum++;
 	}
 }

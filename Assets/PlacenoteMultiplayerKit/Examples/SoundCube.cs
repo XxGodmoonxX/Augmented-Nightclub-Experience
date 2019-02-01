@@ -9,7 +9,7 @@ public class SoundCube : MonoBehaviour {
 	public GameObject SpherePrefabLeft;
 
   public Transform CameraTransform;
-
+	
 	int adjustNum;
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class SoundCube : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Update () {
-		adjustNum = 100; //音量調整用。
+		adjustNum = 200; //音量調整用。
 		float volume = soundObject.GetComponent<sound>().volume * adjustNum;
 		float cubeSize = 0.5f;
 		// gameObject.transform.position = CameraTransform.TransformPoint(3f, 0, 5f); //カメラの位置に移動して右に1、前に1
@@ -34,7 +34,8 @@ public class SoundCube : MonoBehaviour {
     // SpherePrefabLeft.transform.localScale = new Vector3(cubeSize * volume, cubeSize * volume, cubeSize * volume);
 
 		SpherePrefabRight.transform.position = new Vector3(0, 3f, 8f);
-		SpherePrefabRight.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+		// SpherePrefabRight.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+		SpherePrefabRight.GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
     SpherePrefabRight.transform.localScale = new Vector3(cubeSize * volume, cubeSize * volume, cubeSize * volume);
 
 	}

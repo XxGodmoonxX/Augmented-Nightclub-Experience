@@ -20,10 +20,10 @@ public class SoundAnalyser : MonoBehaviour {
 			//Cubeをずらして256分表示
 			// Vector3 pos = new Vector3 (0.05f * i - 12.8f/2, 0f, 5f); //真ん中から均等に左右に
 
-			Vector3 posRight = new Vector3 (3f - 0.008f * i, 0.5f, 0.05f * i); //真ん中から均等に上下に 右側の波
+			Vector3 posRight = new Vector3 (2f - 0.007f * i, 0f, 0.05f * i); //真ん中から均等に上下に 右側の波
 			linesRight[i] = Instantiate(Cube, posRight, Quaternion.identity) as GameObject;
 
-			Vector3 posLeft = new Vector3 (-3f + 0.008f * i, 0.5f, 0.05f * i); //真ん中から均等に上下に 左側の波
+			Vector3 posLeft = new Vector3 (-2f + 0.007f * i, 0f, 0.05f * i); //真ん中から均等に上下に 左側の波
 			linesLeft[i] = Instantiate(Cube, posLeft, Quaternion.identity) as GameObject;
 		}
 	}
@@ -35,9 +35,13 @@ public class SoundAnalyser : MonoBehaviour {
 			// Debug.Log(spectrum[100]);
 
 			//各周波数の大きさをCubeの高さに反映
-			int adjustNum = 500;
+			int adjustNum = 2000;
+
 			linesRight[i].transform.localScale = new Vector3(0.05f, 0.05f * spectrum[i] * adjustNum, 0.05f);
+			linesRight[i].GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+
 			linesLeft[i].transform.localScale = new Vector3(0.05f, 0.05f * spectrum[i] * adjustNum, 0.05f);
+			linesLeft[i].GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
 		}
 	}
 }

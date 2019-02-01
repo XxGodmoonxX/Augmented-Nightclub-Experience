@@ -9,6 +9,17 @@ public class BlueSphereController : Photon.MonoBehaviour {
   public GameObject breakOutText;
 
 	byte i = 0;
+	byte j = 0;
+	byte k = 0;
+	byte l = 0;
+	byte m = 0;
+	byte n = 0;
+
+
+	public int collisionNum = 0; //衝突した回数
+	public int tapNum = 0; //タップした回数
+
+	public int num = 0;
 
 	// int id = PhotonNetwork.player.ID;
 
@@ -56,13 +67,21 @@ public class BlueSphereController : Photon.MonoBehaviour {
 				// PhotonNetwork.Instantiate("BlueSphere", Vector3.zero, Quaternion.identity, 0);
 				// BlueSphere.GetComponent<Rigidbody>().AddForce(cam.transform.TransformDirection(0, 0, 7f),ForceMode.Impulse);
 				if (id == 1) {
-					PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, i);
+					// if ( i < 255) { //0~254
+						PhotonNetwork.Instantiate("BlueSphere", CameraTransform.position, Quaternion.identity, i);
+						i++;
+					// }
 				}
 				if (id == 2) {
 					// PhotonNetwork.Instantiate("RedSphere", CameraTransform.position, Quaternion.identity, i);
 				}
 				// PhotonNetwork.Instantiate("BlueSphere", CameraTransform.TransformDirection(0, 0, 7f), Quaternion.identity, i);
-				i++;
+				
+				//
+				// i++;
+
+
+				// tapNum++;
 			}
 		}
 		//タップ終わり
@@ -80,6 +99,7 @@ public class BlueSphereController : Photon.MonoBehaviour {
 			// Destroy(collision.gameObject);
 			// collision.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 			collision.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1.0f, 0.5f);
+			// collisionNum++;
 		}
 	}
 

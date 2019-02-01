@@ -80,8 +80,14 @@ public class BlueSphereController : Photon.MonoBehaviour {
 			// Destroy(collision.gameObject);
 			// collision.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 			collision.gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1.0f, 0.5f);
+			Invoke("CubeColorChangeWhite", 5f);
 		}
 	}
+
+	void CubeColorChangeWhite(Collision collision) {
+		collision.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+	}
+
 
 	// void startBlueSphere() {
 	// 	PhotonNetwork.Instantiate("BlueSphere", CameraTransform.transform.TransformPoint(0, 0, 5f), Quaternion.identity, 0);

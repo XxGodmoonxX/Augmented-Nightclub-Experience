@@ -50,17 +50,17 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 	public void breakOutUpdate () {
 		// Debug.Log(BreakOutCubeTags.length);
 		// for (int i = 0; i < BreakOutCubeTags.length; i++) {
-		for (int i = 0; i < 972; i++) {
-			if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == new Color(0, 0, 1.0f, 0.5f)) { //Cube青くなってる数
-				CubeBlueNum ++;
-			}
-			if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == new Color(1.0f, 0, 0, 0.5f)) { //Cube赤くなってる数
-				CubeRedNum ++;
-			}
-		}
+		// for (int i = 0; i < 972; i++) {
+		// 	if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == Color(0, 0, 1.0f, 0.5f)) { //Cube青くなってる数
+		// 		CubeBlueNum ++;
+		// 	}
+		// 	if (BreakOutCubeTags[i].GetComponent<Renderer>().material.color == Color(1.0f, 0, 0, 0.5f)) { //Cube赤くなってる数
+		// 		CubeRedNum ++;
+		// 	}
+		// }
 
 		// breakOutText.text = "Update!!!" + id.ToString();
-		breakOutText.text = "ID" + id.ToString() + "Blue" + CubeBlueNum.ToString() + "Red" +CubeRedNum.ToString();
+		breakOutText.text = "ID" + id.ToString();
 		// breakOutText.text = "Update!!!" + id.ToString() + CubeBlueNum.ToString() + CubeRedNum.ToString();
 
 		// volume = soundObject.GetComponent<sound>().volume;

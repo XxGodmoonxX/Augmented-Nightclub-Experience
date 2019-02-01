@@ -35,7 +35,7 @@ public class SoundAnalyser : MonoBehaviour {
 			// Debug.Log(spectrum[100]);
 
 			//各周波数の大きさをCubeの高さに反映
-			int adjustNum = 1000;
+			int adjustNum = 500;
 			linesRight[i].transform.localScale = new Vector3(0.05f, 0.05f * spectrum[i] * adjustNum, 0.05f);
 			linesLeft[i].transform.localScale = new Vector3(0.05f, 0.05f * spectrum[i] * adjustNum, 0.05f);
 		}

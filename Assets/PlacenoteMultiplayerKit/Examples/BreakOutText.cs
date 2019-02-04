@@ -75,7 +75,8 @@ public class BreakOutText : PlacenotePunMultiplayerBehaviour {
 		// blueSphereTapNum = blueSphere.GetComponent<BlueSphereController>().tapNum;
 		// Debug.Log(blueSphereTapNum);
 
-		breakOutText.text = "Collision" + blueSphereCollisionNum.ToString() + "Tap" + blueSphereTapNum.ToString();
+		// breakOutText.text = "Collision" + blueSphereCollisionNum.ToString() + "Tap" + blueSphereTapNum.ToString();
+		breakOutText.text = "Collision" + blueSphereCollisionNum.ToString();
 
 	}
 

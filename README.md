@@ -1,4 +1,7 @@
 # 卒業論文
-!(./readme_img/augmentednightclub.PNG)
 
-!(./readme_img/augmentednightclub.gif)
+## Augmented Nightclub Experience
+
+![](/readme_img/augmentednightclub.PNG)
+
+![](/readme_img/augmentednightclub.gif)
